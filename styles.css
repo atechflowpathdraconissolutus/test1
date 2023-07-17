@@ -12,8 +12,8 @@ button {
 }
 
 #tapeImage {
-  max-width: 100%;
-  height: max-width;
+  max-width: 500px;
+  height: 500px;
   display: block;
   margin: 0 auto;
   object-fit: contain;
