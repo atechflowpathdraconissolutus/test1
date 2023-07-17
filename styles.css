@@ -13,7 +13,7 @@ button {
 
 #tapeImage {
   width: 500px;
-  height: 500px;
+  height: 250px;
   display: block;
   margin: 0 auto;
   object-fit: contain;
