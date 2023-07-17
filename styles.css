@@ -8,10 +8,10 @@
 }
 
 button {
-  margin: 10px;
+  margin: 5px;
 }
 
 #tapeImage {
-  width: 100px;
-  height: 100px;
+  max-width: 100%;
+  height: auto;
 }
