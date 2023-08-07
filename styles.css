@@ -15,5 +15,6 @@ button {
 #tapeImage {
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: auto;
+  height: auto;
 }
