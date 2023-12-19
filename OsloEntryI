@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <style>
+        #output {
+            white-space: pre-line;
+            font-family: monospace;
+            font-size: 18px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <label for="speed">Speed:</label>
+    <input type="range" id="speed" min="1" max="50" value="5">
+    <span id="speedValue">5</span>
+
+    <div id="output"></div>
+
+    <script>
+        const textToType = "My name is Oslo; Dr. Oslo Kalbach. This is my first report of my journey to, and geological research pertaining to, the isles of Kommodore found off some leagues southwest of the Leiger-Shmöff subduction zone. Today’s date is April 21st. I left home some days ago and have been locked into a schooner with only one comrade, my driver, ever since. Tonight the sun is wounded by dear moon’s shimmering sickle and bleeds out on the horizon. she casts a vivid bloodfire on the waves that burns now to yellow remorse, fades to hot wine then crusts up to freeze into speckled black blood mulch above the silent ocean waves. My boat cuts through these waves and is a metal cleaver butchering the waters. From time to time I grip the cool railing and look down over the edge to watch the violence churn. Too next to me is a constant creaking-- my things are tied together, weighed down to the gritty flooring, somewhat wet and soaked. I had packed bedding, some tanks of octane fluid, foodstuff such as instant rations and nonperishables, clear water, and saltwater purifiers, knives, metalware (axe, pick), geolocatory devices, geological equipment, other survey equipment, and so on… My schooner’s driver alerts me that now we are approaching the isle. I turned around to follow his raised and cigarburnt finger-- through the blushing lamps of the ship the Island unfolds on the black horizon in a massive gasp: twin arms of sand banks stretch out from a hungry mountainous interior, this bearing twin uneven peaks capped with the stars and they are clutched, lower down, by bristling beard trees, stubble trees, endlessly flowing outwards from the island to encroach upon the banks. I need to go now-- he needs assistance docking. I will resume my writings when I have the time.";
+        const outputElement = document.getElementById('output');
+        const speedElement = document.getElementById('speed');
+        const speedValueElement = document.getElementById('speedValue');
+
+        let speed = parseInt(speedElement.value);
+        let index = 0;
+
+        speedElement.addEventListener('input', () => {
+            speed = parseInt(speedElement.value);
+            speedValueElement.textContent = speed;
+        });
+
+        function typeText() {
+            outputElement.textContent += textToType[index];
+            index++;
+
+            if (index < textToType.length) {
+                setTimeout(typeText, 1000 / speed);
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>
